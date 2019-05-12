@@ -11,6 +11,10 @@ public class StudentManager
     private String studentList;
     public String[] students;
 
+    /**
+     * Initalizes a new instance of the StudentManager class
+     * @param storage The backing student storage
+     */
     public StudentManager(StudentStorage storage)
     {
         this.storage = storage;
@@ -19,6 +23,10 @@ public class StudentManager
         students = studentList.split(studentEntryDelimiter);
     }
 
+    /**
+     * Returns a studuent randomly from the student list
+     * @return The random student
+     */
     public String pickRandomStudent()
     {
         String[] students = studentList.split(studentEntryDelimiter);
@@ -26,12 +34,21 @@ public class StudentManager
         return students[randomIndex];
     }
 
+    /**
+     * Adds the student with the given studuent name to the list of students
+     * @param newStudent The name of the new student
+     */
     public void addStudent(String newStudent)
     {
         studentList += studentEntryDelimiter + newStudent;
         storage.updateStudentList(studentList);
     }
 
+    /**
+     * Determines whether a student exists in the student list
+     * @param student The student to check
+     * @return True if the student exists in the list, false otherwise.
+     */
     public boolean studentExists(String student)
     {
         String[] students = studentList.split(studentEntryDelimiter);
