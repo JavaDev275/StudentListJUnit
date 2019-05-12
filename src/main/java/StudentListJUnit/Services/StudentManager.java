@@ -15,4 +15,9 @@ public class StudentManager
         return studentList.split(",");
     }
 
+    public int CountStudents()
+    {
+        String studentList = storage.LoadStudentList();
+        return studentList.split(",").length;
+    }
 }

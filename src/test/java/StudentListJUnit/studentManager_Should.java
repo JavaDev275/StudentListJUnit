@@ -33,4 +33,17 @@ public class studentManager_Should
         Assert.assertTrue(actual.length == 4);
         Assert.assertTrue(Arrays.asList(actual).contains("student2"));
     }
+
+    @Test
+    public void returnCorrectStudentCount()
+    {
+        // Arrange
+        StudentManager sut = new StudentManager(mockStorage);
+
+        // Act
+        int actual = sut.CountStudents();
+
+        // Assert
+        Assert.assertEquals(4, actual);
+    }
 }
