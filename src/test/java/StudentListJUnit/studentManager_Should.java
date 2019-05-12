@@ -30,7 +30,7 @@ public class studentManager_Should
 
         // Assert
         Assert.assertEquals(String[].class, actual.getClass());
-        Assert.assertTrue(actual.length > 0);
+        Assert.assertTrue(actual.length == 4);
         Assert.assertTrue(Arrays.asList(actual).contains("student2"));
     }
 }
