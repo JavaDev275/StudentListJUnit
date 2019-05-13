@@ -6,15 +6,15 @@ import StudentListJUnit.Services.*;
 import org.mockito.Mockito;
 import java.util.*;
 
-public class studentManager_Should
+public class StudentManager_Should
 {
     StudentStorage mockStorage;
 
-    public studentManager_Should()
+    public StudentManager_Should()
     {
         mockStorage = Mockito.mock(StudentStorage.class);
         Mockito.when(
-            mockStorage.LoadStudentList()).thenReturn(
+            mockStorage.loadStudentList()).thenReturn(
                 "student1,student2,student3,student4"
             );
     }

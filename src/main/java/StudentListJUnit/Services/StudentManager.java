@@ -11,7 +11,7 @@ public class StudentManager
 
     public String[] getAllStudents()
     {
-        String studentList = storage.LoadStudentList();
+        String studentList = storage.loadStudentList();
         return studentList.split(",");
     }
 
