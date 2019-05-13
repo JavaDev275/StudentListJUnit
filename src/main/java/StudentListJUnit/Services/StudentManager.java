@@ -11,12 +11,20 @@ public class StudentManager
     private String studentList;
     public String[] students;
 
+
+    public StudentManager()
+    {
+        this.storage = new StudentStorage();
+        this.rand = new Random();
+        studentList = storage.loadStudentList();
+        students = studentList.split(studentEntryDelimiter);
+    }
+
     /**
      * Initalizes a new instance of the StudentManager class
      * @param storage The backing student storage
      */
-    public StudentManager(StudentStorage storage)
-    {
+    public StudentManager(StudentStorage storage){
         this.storage = storage;
         this.rand = new Random();
         studentList = storage.loadStudentList();

@@ -1,4 +1,4 @@
-package StudentListJUnit;
+package StudentListJUnit.Console;
 
 public class Constants 
 {
@@ -21,5 +21,5 @@ public class Constants
     protected static final String AddEntry = "+";
 
     // The delimiter that separates entries in the student list.
-    protected static final String StudentEntryDelimiter = ", ";
+    protected static final String StudentEntryDelimiter = ",";
 }

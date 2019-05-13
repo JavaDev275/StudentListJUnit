@@ -4,9 +4,16 @@
             "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
-            "mainClass": "StudentListJUnit.App",
+            "mainClass": "StudentListJUnit.Console.App",
             "projectName": "StudentListJUnit",
-            "args":""
+            "args": "-a"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - App",
+            "request": "launch",
+            "mainClass": "StudentListJUnit.App",
+            "projectName": "StudentListJUnit"            
         }
     ]
 }

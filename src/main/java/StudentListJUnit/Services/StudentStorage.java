@@ -1,7 +1,12 @@
 package StudentListJUnit.Services;
 
+import java.io.*;
+import java.util.Date;
+
 public class StudentStorage 
 {
+    private final String StudentList = "students.txt";
+    
     /**
      * Replaces the contents of the student storage with the given string of content.
      * Also updates the timestamp in the student storage.
@@ -9,8 +14,17 @@ public class StudentStorage
      */
     public void updateStudentList(String content) 
     {
-        System.out.println("Write Tests");
-        return;
+        String timestamp = String.format("List last updated %s", new Date());
+        
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(StudentList));        
+            writer.write(content);
+            writer.newLine();
+            writer.append(timestamp);            
+            writer.close();
+        } catch (IOException exception){
+            System.out.println(exception);
+        }
     }
 
     /**
@@ -18,8 +32,19 @@ public class StudentStorage
      * @return A string of student names
      */
     public String loadStudentList()
-    {
-        System.out.println("Write Tests");
-        return " ";
+    {        
+        String bufferedStudentList = " ";  
+
+        // The try...catch block handles the possible error that may occur if 
+        // there was an issue with accessing the file.        
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(StudentList));
+            bufferedStudentList = bufferedReader.readLine();
+            bufferedReader.close();
+        } catch (IOException exception){
+            System.out.println(exception);
+        } 
+
+        return bufferedStudentList;    
     }
 }
