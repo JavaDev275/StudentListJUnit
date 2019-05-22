@@ -6,12 +6,10 @@ import StudentListJUnit.Services.*;
 import org.mockito.Mockito;
 import java.util.*;
 
-public class StudentManager_Should
-{
+public class StudentManager_Should {
     StudentStorage mockStorage;
 
-    public StudentManager_Should()
-    {
+    public StudentManager_Should() {
         mockStorage = Mockito.mock(StudentStorage.class);
         Mockito.when(
             mockStorage.loadStudentList()).thenReturn(
@@ -20,8 +18,8 @@ public class StudentManager_Should
     }
 
     @Test
-    public void returnListOfStudents()
-    {
+    public void returnListOfStudents() {
+        
         // Arrange
         StudentManager sut = new StudentManager(mockStorage);
 
@@ -35,8 +33,8 @@ public class StudentManager_Should
     }
 
     @Test
-    public void returnCorrectStudentCount()
-    {
+    public void returnCorrectStudentCount() {
+        
         // Arrange
         StudentManager sut = new StudentManager(mockStorage);
 
@@ -48,8 +46,8 @@ public class StudentManager_Should
     }
 
     @Test
-    public void returnRandomStudent()
-    {
+    public void returnRandomStudent() {
+        
         // Arrange
         StudentManager sut = new StudentManager(mockStorage);
         String actualString = mockStorage.loadStudentList();
@@ -62,8 +60,8 @@ public class StudentManager_Should
     }
 
     @Test
-    public void call_UpdateStudentList_When_StudentAdded()
-    {
+    public void call_UpdateStudentList_When_StudentAdded() {
+        
         // Arrange
         StudentManager sut = new StudentManager(mockStorage);
         String originalList = mockStorage.loadStudentList();
@@ -78,8 +76,8 @@ public class StudentManager_Should
     }
 
     @Test
-    public void returnTrue_When_SearchForExistingStudent()
-    {
+    public void returnTrue_When_SearchForExistingStudent() {
+        
         // Arrange
         StudentManager sut = new StudentManager(mockStorage);
         String existingStudent = "student1";
@@ -92,8 +90,8 @@ public class StudentManager_Should
     }
 
     @Test
-    public void returnFalse_When_SearchForNonExistentStudent()
-    {
+    public void returnFalse_When_SearchForNonExistentStudent() {
+        
         // Arrange
         StudentManager sut = new StudentManager(mockStorage);
         String fakeStudent = "fakeStudent";
